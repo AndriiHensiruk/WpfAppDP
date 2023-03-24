@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfAppDP.View.AddUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppDP.View"
+        mc:Ignorable="d"
+        Title="AddUser" Height="450" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="200">
+            <TextBlock Text="Name"/>
+            <TextBox Text=""/>
+            <TextBlock Text="Surname"/>
+            <TextBox Text=""/>
+            <TextBlock Text="Phone"/>
+            <TextBox Text=""/>
+            <TextBlock Text="Comment"/>
+            <TextBox Text=""/>
+        </StackPanel>
+        <Button Grid.Row="1" Content="Add User"/>
+    </Grid>
+</Window>
