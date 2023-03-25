@@ -21,8 +21,8 @@
             <TextBox Name="SurNameBlock" Text="{Binding UserSurName}"/>
             <TextBlock Text="Phone"/>
             <TextBox Name="PhoneBlock" PreviewTextInput="PreviewTextInput" Text="{Binding UserPhone}"/>
-            <TextBlock Text="Position"/>
-            <TextBox Name="Comment" PreviewTextInput="PreviewTextInput" Text="{Binding UserComment}"/>
+            <TextBlock Text="Comment"/>
+            <TextBox Name="Comment" Text="{Binding UserComment}"/>
         </StackPanel>
         <Button Grid.Row="1" Content="Add user"
                 Command="{Binding AddNewUser}"

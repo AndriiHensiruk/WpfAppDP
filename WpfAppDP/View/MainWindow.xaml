@@ -18,8 +18,8 @@
                 </TabItem.Header>
                 <TabItem.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="Редактировать" Command="{Binding OpenEditItemWnd}"/>
-                        <MenuItem Header="Удалить" Command="{Binding DeleteItem}"/>
+                        <MenuItem Header="Edit" Command="{Binding OpenEditItemWnd}"/>
+                        <MenuItem Header="Delete" Command="{Binding DeleteItem}"/>
                     </ContextMenu>
                 </TabItem.ContextMenu>
                 <ListView x:Name="ViewAllUsers" ItemsSource="{Binding AllUsers}"
