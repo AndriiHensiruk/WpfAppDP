@@ -189,6 +189,7 @@
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="Model\DataWorker.cs" />
     <Compile Include="Model\Data\ApplicationContext.cs" />
+    <Compile Include="Model\RelayCommand.cs" />
     <Compile Include="ViewModel\DataMangerVW.cs" />
     <Compile Include="View\MessageView.xaml.cs">
       <DependentUpon>MessageView.xaml</DependentUpon>

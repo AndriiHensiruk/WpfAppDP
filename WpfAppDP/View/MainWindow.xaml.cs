@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppDP.ViewModel;
 
 namespace WpfAppDP.View
 {
@@ -20,9 +21,12 @@ namespace WpfAppDP.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static ListView AllUsersView;
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new DataManageVM();
+            AllUsersView = ViewAllUsers;
         }
     }
 }

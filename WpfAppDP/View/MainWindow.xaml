@@ -7,6 +7,42 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" SelectedItem="{Binding SelectedTabItem}">
+            <TabItem Name="UsersTab">
+                <TabItem.Header>
+                    <TextBlock Text="Staff"/>
+                </TabItem.Header>
+                <TabItem.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Редактировать" Command="{Binding OpenEditItemWnd}"/>
+                        <MenuItem Header="Удалить" Command="{Binding DeleteItem}"/>
+                    </ContextMenu>
+                </TabItem.ContextMenu>
+                <ListView x:Name="ViewAllUsers" ItemsSource="{Binding AllUsers}"
+                          SelectedItem="{Binding SelectedUser}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name"                                            
+                                            DisplayMemberBinding="{Binding Path=Name}"/>
+                            <GridViewColumn Header="SurName"
+                                            DisplayMemberBinding="{Binding Path=SurName}"/>
+                            <GridViewColumn Header="Phone"
+                                            DisplayMemberBinding="{Binding Path=Phone}"/>
+                            <GridViewColumn Header="Comment"
+                                            DisplayMemberBinding="{Binding Path=Comment}"/>
+                            
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button Content="New  Uses" Command="{Binding OpenAddNewUserWnd}"/>
+        </StackPanel>
     </Grid>
 </Window>
