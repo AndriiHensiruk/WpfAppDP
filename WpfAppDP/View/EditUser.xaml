@@ -9,21 +9,31 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Vertical"
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Vertical"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Width="200">
-            <TextBlock Text="Name"/>
-            <TextBox Text=""/>
-            <TextBlock Text="Surname"/>
-            <TextBox Text=""/>
-            <TextBlock Text="Phone"/>
-            <TextBox Text=""/>
-            <TextBlock Text="Comment"/>
-            <TextBox Text=""/>
+                <TextBlock Text="New name"/>
+                <TextBox Text="{Binding UserName}"/>
+                <TextBlock Text="New surname"/>
+                <TextBox Text="{Binding UserSurName}"/>
+                <TextBlock Text="New phone"/>
+            <TextBox>
+                <TextBox.Text>
+                    <Binding Path="UserPhone">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBlock Text="New comment"/>
+            <TextBox Name="Comment" Text="{Binding UserComment}"/>
         </StackPanel>
-        <Button Grid.Row="1" Content="Edit staff"/>
+            <Button Grid.Row="1" Content="Edit user"
+                Command="{Binding EditUser}"
+                CommandParameter="{Binding ElementName=EditUserWnd}"/>
     </Grid>
 </Window>
