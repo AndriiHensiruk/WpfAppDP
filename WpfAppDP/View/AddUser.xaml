@@ -16,14 +16,16 @@
                     VerticalAlignment="Center"
                     Width="200">
             <TextBlock Text="Name"/>
-            <TextBox Text=""/>
+            <TextBox Name="NameBlock" Text="{Binding UserName}"/>
             <TextBlock Text="Surname"/>
-            <TextBox Text=""/>
+            <TextBox Name="SurNameBlock" Text="{Binding UserSurName}"/>
             <TextBlock Text="Phone"/>
-            <TextBox Text=""/>
-            <TextBlock Text="Comment"/>
-            <TextBox Text=""/>
+            <TextBox Name="PhoneBlock" PreviewTextInput="PreviewTextInput" Text="{Binding UserPhone}"/>
+            <TextBlock Text="Position"/>
+            <TextBox Name="Comment" PreviewTextInput="PreviewTextInput" Text="{Binding UserComment}"/>
         </StackPanel>
-        <Button Grid.Row="1" Content="Add User"/>
+        <Button Grid.Row="1" Content="Add user"
+                Command="{Binding AddNewUser}"
+                CommandParameter="{Binding ElementName=AddUser}"/>
     </Grid>
 </Window>

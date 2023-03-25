@@ -14,8 +14,8 @@ namespace WpfAppDP.ViewModel
 {
     public class DataManageVM : INotifyPropertyChanged
     {
-        
-        //все сотрудники
+
+        //all employees
         private List<User> allUsers = DataWorker.GetAllUsers();
         public List<User> AllUsers
         {
@@ -30,14 +30,14 @@ namespace WpfAppDP.ViewModel
             }
         }
 
-       
-        //свойства для сотрудника
+
+        //properties for employee
         public static string UserName { get; set; }
         public static string UserSurName { get; set; }
         public static string UserPhone { get; set; }
         public static string UserComment { get; set; }
 
-        //свойства для выделенных элементов
+        //properties for selected elements
         public TabItem SelectedTabItem { get; set; }
         public static User SelectedUser { get; set; }
 
@@ -91,14 +91,14 @@ namespace WpfAppDP.ViewModel
                 return deleteItem ?? new RelayCommand(obj =>
                 {
                     string resultStr = "Ничего не выбрано";
-                    //если сотрудник
+                    //if employee
                     if (SelectedTabItem.Name == "UsersTab" && SelectedUser != null)
                     {
                         resultStr = DataWorker.DeleteUser(SelectedUser);
                         UpdateAllDataView();
                     }
-                   
-                    //обновление
+
+                    //update
                     SetNullValuesToProperties();
                     ShowMessageToUser(resultStr);
                 }
@@ -115,8 +115,7 @@ namespace WpfAppDP.ViewModel
                 return editUser ?? new RelayCommand(obj =>
                 {
                     Window window = obj as Window;
-                    string resultStr = "Не выбран сотрудник";
-                    string noPositionStr = "Не выбрана новая должность";
+                    string resultStr = "Employee not selected";
                     if (SelectedUser != null)
                     {
                         if (UserComment != null)
@@ -128,7 +127,6 @@ namespace WpfAppDP.ViewModel
                             ShowMessageToUser(resultStr);
                             window.Close();
                         }
-                        else ShowMessageToUser(noPositionStr);
                     }
                     else ShowMessageToUser(resultStr);
 
@@ -160,7 +158,7 @@ namespace WpfAppDP.ViewModel
             {
                 return openEditItemWnd ?? new RelayCommand(obj =>
                 {
-                    string resultStr = "Ничего не выбрано";
+                    string resultStr = "Nothing selected";
                     //если сотрудник
                     if (SelectedTabItem.Name == "UsersTab" && SelectedUser != null)
                     {
@@ -180,8 +178,8 @@ namespace WpfAppDP.ViewModel
             SetCenterPositionAndOpen(newUserWindow);
         }
 
-        //окна редактирования
-        
+        //edit windows
+
         private void OpenEditUserWindowMethod(User user)
         {
             EditUser editUserWindow = new EditUser(user);
@@ -204,7 +202,7 @@ namespace WpfAppDP.ViewModel
         #region UPDATE VIEWS
         private void SetNullValuesToProperties()
         {
-            //для пользователя
+            //for the user
             UserName = null;
             UserSurName = null;
             UserPhone = null;
