@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppDP.View"
         mc:Ignorable="d"
-        Title="EditUser" Height="450" Width="600">
+        Title="EditUser" Height="450" Width="600"
+         Name="EditUser">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -34,6 +35,6 @@
         </StackPanel>
             <Button Grid.Row="1" Content="Edit user"
                 Command="{Binding EditUser}"
-                CommandParameter="{Binding ElementName=EditUserWnd}"/>
+                CommandParameter="{Binding ElementName=EditUser}"/>
     </Grid>
 </Window>

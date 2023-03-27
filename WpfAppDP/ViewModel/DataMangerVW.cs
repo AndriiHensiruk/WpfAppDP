@@ -65,7 +65,7 @@ namespace WpfAppDP.ViewModel
                     //}
                     if (UserComment == null)
                     {
-                        MessageBox.Show("Укажите позицию");
+                        MessageBox.Show("Insert Comment");
                     }
                     else
                     {
@@ -159,7 +159,7 @@ namespace WpfAppDP.ViewModel
                 return openEditItemWnd ?? new RelayCommand(obj =>
                 {
                     string resultStr = "Nothing selected";
-                    //если сотрудник
+                   
                     if (SelectedTabItem.Name == "UsersTab" && SelectedUser != null)
                     {
                         OpenEditUserWindowMethod(SelectedUser);

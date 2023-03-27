@@ -14,7 +14,7 @@
         <TabControl Grid.Row="0" SelectedItem="{Binding SelectedTabItem}">
             <TabItem Name="UsersTab">
                 <TabItem.Header>
-                    <TextBlock Text="Staff"/>
+                    <TextBlock Text="Uses"/>
                 </TabItem.Header>
                 <TabItem.ContextMenu>
                     <ContextMenu>
